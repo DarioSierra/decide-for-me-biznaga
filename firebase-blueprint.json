@@ -1,0 +1,23 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile storing decision criteria and priorities",
+      "type": "object",
+      "properties": {
+        "priorities": {
+          "type": "string",
+          "description": "The user's calibrated priorities and decision matrix",
+          "maxLength": 10000
+        }
+      },
+      "required": ["priorities"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Stores user configuration and priorities for the decision assistant"
+    }
+  }
+}
